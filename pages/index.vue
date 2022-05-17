@@ -11,7 +11,7 @@
           <div v-for="event in eventStore.sortedEvents" :key="event.id">
           
           <h3>{{event.title.rendered}}</h3>
-          <div v-html="event.content.rendered"></div>
+          <div class="max-w-screen-md" v-html="event.content.rendered"></div>
           </div>
      
   
