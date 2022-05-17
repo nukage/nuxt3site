@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 
 export default defineNuxtConfig({
-    ssr: true,
+    // ssr: true,
     // css: [
     //     "~/assets/css/tailwind.css"
     // ],
@@ -18,10 +18,10 @@ export default defineNuxtConfig({
     //     }
     // }
     modules: ['@pinia/nuxt'],
-    nitro: {
-        preset: 'nitro-prerender',
-      },
-      target: 'static'
+    // nitro: {
+    //     preset: 'nitro-prerender',
+    //   },
+    //   target: 'static'
 
 
 })
