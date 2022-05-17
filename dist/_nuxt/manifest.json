@@ -1,0 +1,102 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-7777fe73.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/[slug].vue",
+      "pages/about.vue",
+      "pages/blog/_slug.vue",
+      "pages/contact.vue",
+      "pages/index.vue",
+      "pages/products/index.vue",
+      "pages/products/umbrella.vue",
+      "pages/products/watch.vue",
+      "layouts/default.vue",
+      "layouts/error.vue"
+    ],
+    "css": [
+      "entry.79794ea6.css"
+    ]
+  },
+  "pages/[slug].vue": {
+    "file": "_slug_-4b70b1a5.mjs",
+    "src": "pages/[slug].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/about.vue": {
+    "file": "about-e6b50a6b.mjs",
+    "src": "pages/about.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/blog/_slug.vue": {
+    "file": "_slug-33cf3e10.mjs",
+    "src": "pages/blog/_slug.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/contact.vue": {
+    "file": "contact-2827e9e2.mjs",
+    "src": "pages/contact.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-c8ae6e8c.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/products/index.vue": {
+    "file": "index-e6385ccd.mjs",
+    "src": "pages/products/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/products/umbrella.vue": {
+    "file": "umbrella-eb586073.mjs",
+    "src": "pages/products/umbrella.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "pages/products/watch.vue": {
+    "file": "watch-0b2844d3.mjs",
+    "src": "pages/products/watch.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/default.vue": {
+    "file": "default-73368cc1.mjs",
+    "src": "layouts/default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/error.vue": {
+    "file": "error-f03e29f0.mjs",
+    "src": "layouts/error.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  }
+}

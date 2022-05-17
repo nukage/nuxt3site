@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./entry-7777fe73.mjs";const a={head(){return{title:"About Page",meta:[{hid:"description",name:"descrition",content:"My about page description"}]}}};function n(r,c,s,i,p,d){return t(),o("div",null," This is about page ")}var _=e(a,[["render",n]]);export{_ as default};
