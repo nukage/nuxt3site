@@ -6,15 +6,23 @@ import { defineStore } from 'pinia'
 export const useEventStore = defineStore('eventStore', {
     state: () => ({
         events: [],
+        slug: ''
     }),
     getters:{
         sortedEvents: (state) => {
             return state.events.slice().sort((a, b) => new Date(a.acf.start_time) - new Date(b.acf.start_time));
           },
+        currentEvent: (state) => {
+            return state.events.find((r) => r.slug === state.slug);
+        }
       },
   actions: {
       updateEvents(events){
-        this.events = events
+        this.events = events;
+      
+      },
+      setSlug(slug){
+        this.slug = slug;
       },
     async getEvents() {
         // if events is already set, stop
@@ -33,7 +41,8 @@ export const useEventStore = defineStore('eventStore', {
     // commit('SET_EVENTS', events);
     
     this.events = events;
-    console.log(this.events);
+    return this.events;
+ 
 } catch (err) {
     console.error('getEvents', err);
 }
