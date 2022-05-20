@@ -1,51 +1,39 @@
 <template>
 <div>
     slug: {{eventStore.slug}}
-
-    <!-- <div class="max-w-screen-md" v-html="event.content.rendered"></div> -->
     <div v-if="eventStore.currentEvent">
-    <h3>{{eventStore.currentEvent.title.rendered}}</h3>
-    <div v-html="eventStore.currentEvent.content.rendered"></div>
-  
+        <!-- <div class="max-w-screen-md" v-html="event.content.rendered"></div> -->
+        <div v-if="eventStore.currentEvent.loading">
+            <h3>Please wait while the event data loads.</h3>
+        </div>
+        <div v-else-if="eventStore.currentEvent.title?.rendered">
+            <h3>{{eventStore.currentEvent.title.rendered}}</h3>
+            <div v-html="eventStore.currentEvent.content.rendered"></div>
+        </div>
+        <div v-else><h3>Error</h3> <p>No page found at this location.</p> </div>
     </div>
 </div>
-
-          
 </template>
-
 <script setup>
-
 import { useEventStore } from "~~/store/events"
-
-const eventStore = useEventStore();
-eventStore.getEvents();
-
-const route = useRoute();
-// const slug = route.params.slug;
-eventStore.setSlug(route.params.slug);
-
+    const eventStore = useEventStore();
+    eventStore.getEvents();
+    const route = useRoute();
+    eventStore.setSlug(route.params.slug);
 </script>
 <script>
-
-// const slug = $route.params.slug
-    
-
 export default{
-
-  computed: {
-    events(){
-    //   return this.$store.state.events;
+    setup() {
     },
-    event(){
-    //   return eventStore.find(el => el.slug === this.slug);
+    computed: {
+        currentEvent() {
+            return eventStore.currentEvent();
+        }  
     },
-  },
-  created(){
-    // this.$store.dispatch("getEvents");
-  }
-
-
+    watch: {
+        currentEvent(newEvent, oldEvent){
+            console.log(newEvent)
+        }
+    }
 }
-
-
 </script>

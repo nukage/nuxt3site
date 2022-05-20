@@ -8,11 +8,11 @@
           <div v-for="item in todoStore.items">
           {{ item }}
           </div>
-          <div v-for="event in eventStore.sortedEvents" :key="event.id">
+          <div v-for="event in eventStore.events" :key="event.id">
           
-          <h3>{{event.title.rendered}}</h3>
-          <NuxtLink :to="`/events/${event.slug}`">{{event.title.rendered}}</NuxtLink>
-          <div class="max-w-screen-md" v-html="event.content.rendered"></div>
+          <h3>{{event.title?.rendered}}</h3>
+          <NuxtLink :to="`/events/${event.slug}`">{{event.title?.rendered}}</NuxtLink>
+          <div class="max-w-screen-md" v-html="event.content?.rendered"></div>
           </div>
      
   

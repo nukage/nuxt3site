@@ -9,11 +9,17 @@ export const useEventStore = defineStore('eventStore', {
         slug: ''
     }),
     getters:{
-        sortedEvents: (state) => {
-            return state.events.slice().sort((a, b) => new Date(a.acf.start_time) - new Date(b.acf.start_time));
-          },
+        // sortedEvents: (state) => {
+        //     return state.events.slice().sort((a, b) => new Date(a.acf.start_time) - new Date(b.acf.start_time));
+        //   },
         currentEvent: (state) => {
-            return state.events.find((r) => r.slug === state.slug);
+          let event = state.events.find((r) => r.slug === state.slug);
+          if (state.events[0] && !event) {
+            event = {notFound: true}
+          } else if (!state.events[0]){
+            event = {loading: true}
+          }
+            return event;
         }
       },
   actions: {
@@ -29,14 +35,14 @@ export const useEventStore = defineStore('eventStore', {
         if (this.events.length) return;
         try {
             // let events = await fetch(`http://jamstack.local/wp-json/wp/v2/events?page=1&per_page=100&_embed=1`).then(res => res.json());
-            let events = await fetch(`https://www.flourateeter.com/wp-json/wp/v2/posts?page=1&per_page=100&_embed=1`).then(res => res.json());
+            let events = await fetch(`https://stevewaitt.nukage.net/wp-json/wp/v2/posts?page=1&per_page=100&_embed=1`).then(res => res.json());
             // filter out unnecessary data
             events = events.filter(el => el.status === "publish").map(({ id, slug, title, content, acf }) => ({
                 id,
                 slug,
                 title,
                 content,
-                acf,
+                // acf,
             }));
     // commit('SET_EVENTS', events);
     
